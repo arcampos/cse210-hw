@@ -3,9 +3,9 @@ using System.Runtime.CompilerServices;
 
 public class Entry
 {
-    private static Random random = new Random();
+    public static Random random = new Random();
 
-    private static string[] prompts = new string[]
+    public static string[] prompts = new string[]
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
@@ -23,7 +23,7 @@ public class Entry
         Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
     }
 
-    private string GetRandomPrompt()
+    public string GetRandomPrompt()
     {
         int index = random.Next(prompts.Length);
         return prompts[index];
