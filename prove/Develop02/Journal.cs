@@ -8,7 +8,7 @@ public class Journal
 
     public void AddEntry(string prompt, string response, string date)
     {
-        Entry newEntry = new Entry(prompt, response, date);
+        Entry newEntry = new Entry();
         entries.Add(newEntry);
     }
 
@@ -16,7 +16,7 @@ public class Journal
     {
         foreach (Entry entry in entries)
         {
-            Console.WriteLine(entry);
+            Console.WriteLine($"{entry.Date}: {entry.Prompt}; {entry.Response}");
         }
     }
 
@@ -45,7 +45,7 @@ public class Journal
                     string prompt = parts[0];
                     string response = parts[1];
                     string date = parts[2];
-                    Entry newEntry = new Entry(prompt, response, date);
+                    Entry newEntry = new Entry();
                     entries.Add(newEntry);
                 }
             }
